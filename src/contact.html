@@ -213,10 +213,14 @@
 	<section class="section-contact bg1-pattern p-t-90 p-b-113">
 		<!-- Map -->
 		<div class="container" style="text-align:center">
-			<!-- <iframe width="600" height="450"
-		src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d399.0494885552349!2d174.74669005081893!3d-36.8569412743878!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6d0d4796871bd113%3A0x875d4049b4f69980!2s80%20Mackelvie%20Street%2C%20Grey%20Lynn%2C%20Auckland%201021!5e0!3m2!1sen!2snz!4v1729415514299!5m2!1sen!2snz"
-		width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-		referrerpolicy="no-referrer-when-downgrade"></iframe> -->
+			<div class="wrap-btn-booking flex-c-m m-t-13">
+				<button type="button" class="btn3 flex-c-m size36 txt11 trans-0-4 button button-contactForm btn_1" onclick="getDirection()">
+					<span>Find Us on Google Map</span>
+				</button>
+				<button type="button" class="btn3 flex-c-m size36 txt11 trans-0-4 button button-contactForm btn_1" style="margin-left:20px" onclick="callUs()">
+					<span>Call Us</span>
+				</button>
+			</div>
 			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3191.61908522144!2d174.73440907584182!3d-36.8755354722258!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6d0d47ba446b58bf%3A0xad346c2d9beb0553!2sEden%20Noodles%20Bar%20Morningside!5e0!3m2!1sen!2snz!4v1764943865428!5m2!1sen!2snz" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 		</div>
 
@@ -735,7 +739,15 @@
 				$("#submit").prop("disabled", false);
 				$("#submit").find(".spinner").remove();
 			}
-		}
+        }
+
+        function getDirection() {
+            window.location.href = "https://www.google.com/maps/place/Eden+Noodles+Bar+Morningside/@-36.8755355,174.7344091,16z/data=!3m1!4b1!4m6!3m5!1s0x6d0d47ba446b58bf:0xad346c2d9beb0553!8m2!3d-36.8755355!4d174.736984!16s%2Fg%2F11yq38hblb?entry=ttu&g_ep=EgoyMDI2MDExOS4wIKXMDSoKLDEwMDc5MjA3MUgBUAM%3D";
+        }
+
+        function callUs() {
+            window.location.href = "tel:092812688";
+        }
 	</script>
 
 	<style>
