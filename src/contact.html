@@ -660,6 +660,7 @@
 
 
 	<script src="vendor/jquery.validate.min.js"></script>
+
 	<!-- Google tag (gtag.js) -->
 	<script src="https://www.google.com/recaptcha/api.js?render=6Ld6RCIsAAAAAAZVSyaM15wjDXZ6KK8EMYEZ2Vsf"></script>
 	<script>
@@ -724,7 +725,7 @@
 					$("#submit").append('<div class="spinner"></div>');
 				}
 
-                niobium.notification.contactUs(
+				niobium.notification.contactUs(
 					"6Ld6RCIsAAAAAAZVSyaM15wjDXZ6KK8EMYEZ2Vsf",
 					"b4695665-680d-48e4-a3c7-72e5ae6fdb0e",
 					$("#realname").val(),
@@ -734,20 +735,39 @@
 				);
 
 				$("#sent").show();
+			    gtag('event', 'website_contact_form', {
+				  // <event_parameters>
+			    });
 			} finally {
 				// 无论成功或失败，恢复按钮状态
 				$("#submit").prop("disabled", false);
 				$("#submit").find(".spinner").remove();
 			}
-        }
+		}
 
-        function getDirection() {
-            window.location.href = "https://www.google.com/maps/place/Eden+Noodles+Bar+Morningside/@-36.8755355,174.7344091,16z/data=!3m1!4b1!4m6!3m5!1s0x6d0d47ba446b58bf:0xad346c2d9beb0553!8m2!3d-36.8755355!4d174.736984!16s%2Fg%2F11yq38hblb?entry=ttu&g_ep=EgoyMDI2MDExOS4wIKXMDSoKLDEwMDc5MjA3MUgBUAM%3D";
-        }
+		function getDirection() {
+            var callback = function () {
+                window.location = "https://www.google.com/maps/place/Eden+Noodles+Bar+Morningside/@-36.8755355,174.7344091,16z/data=!3m1!4b1!4m6!3m5!1s0x6d0d47ba446b58bf:0xad346c2d9beb0553!8m2!3d-36.8755355!4d174.736984!16s%2Fg%2F11yq38hblb?entry=ttu&g_ep=EgoyMDI2MDExOS4wIKXMDSoKLDEwMDc5MjA3MUgBUAM%3D";
+            };
+            gtag('event', 'conversion_event_get_directions_1', {
+                'event_callback': callback,
+                'event_timeout': 2000,
+                // <event_parameters>
+            });
+            return false;
+		}
 
-        function callUs() {
-            window.location.href = "tel:092812688";
-        }
+		function callUs() {
+            var callback = function () {
+                window.location = "tel:092812688";
+            };
+            gtag('event', 'website_call', {
+                'event_callback': callback,
+                'event_timeout': 2000,
+                // <event_parameters>
+            });
+            return false;
+		}
 	</script>
 
 	<style>
